@@ -13,3 +13,11 @@
     background-color: rgb(0, 255, 255,1);
     transform: scale(0.9);
 }
+.fa-solid{
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+.fa-solid:hover{
+  transform: scale(1.1);
+}
