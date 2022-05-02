@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const ItemCount = (props) => {
-  console.log(props.cantidad);
+  
   const [contador, setContador] = useState(0);
 
   function restar(params) {
