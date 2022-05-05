@@ -1,24 +1,24 @@
 import React from "react";
+import Item from "./Item";
 
-const ItemList = (props) => {
+
+const ItemList = ({pelicula}) => {
   return (
-    <div >
-      
-      <div className="card" style={{ width:"18rem"}}>
-        <img style={{height:"13rem" }} src={props.imagen} className="card-img-top" alt="..." />
-        <div className="card-body">
-          <h5 className="card-title">{props.nombre}</h5>
-          <p className="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" className="btn btn-primary">
-            {props.mensaje}
-          </a>
-        </div>
-      </div>
-     </div>
+    <div className="container" >
+              
+              <div className="row p-0 m-0">
+                  
+                   {pelicula.length > 0 ? pelicula.map((peli,index)=>(
+                    <Item nombre={peli.nombre} mensaje={peli.mensaje} imagen={peli.imagen}/>
+                    )):
+                    <h1>cargando<i class="fa-solid fa-spinner"></i></h1>
+                  }
+                
+              </div>
+
+    </div>
   );
+
 };
 
 export default ItemList;
