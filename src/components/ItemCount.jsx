@@ -14,7 +14,7 @@ const ItemCount = (props) => {
 
   return (
    
-       <div  className="contador"style={{display: "flex", margin: "40px auto",width: "500px",justifyContent: "space-between", borderRadius:"10px",}}>
+       <div  className=" contador container" style={{display:"inline-flex", justifyContent:"center"}} >
       
          <button onClick={restar}><i className="fa-solid fa-minus btn"></i></button>
       
@@ -22,7 +22,11 @@ const ItemCount = (props) => {
         
          <button onClick={sumar}><i className="fa-solid fa-plus btn"></i></button>
          
-         <button >Agregar al carrito</button>
+        
+         
+         <button>Agregar al carrito</button>
+           
+         
       </div>
      
       

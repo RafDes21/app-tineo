@@ -6,7 +6,7 @@ import CartWidget from './CartWidget'
 export default function NavBar() {
   return (
     
-    <nav className="navbar navbar-expand-lg navbar-alert-dark alert-dark">
+    <nav className="navbar navbar-expand-lg navbar-alert-dark alert-dark bg-dark">
   <div className="container">
     <a className="navbar-brand" href="#"><img src={logo} alt="" width="60" height="60"/></a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

@@ -1,3 +1,4 @@
+
 .navbar-nav {
     margin-left: auto;
 }
@@ -5,7 +6,7 @@
 .navbar-nav li a {
     transition: all 300ms;
     margin-right: 50px;
-    border-bottom: 1px solid rgb(37, 32, 32);
+    border-bottom: 1px solid rgb(0, 255, 255,1);
 }
 
 .navbar-nav li a:hover {
@@ -13,22 +14,23 @@
     background-color: rgb(0, 255, 255,1);
     transform: scale(0.9);
 }
-.fa-solid{
+.CartWidget{
     font-size: 30px;
     cursor: pointer;
     transition: 0.3s all;
+    color: aqua;
     
 }
-.fa-solid:hover{
+.CartWidget:hover{
   transform: scale(1.1);
 }
 /* //itemCount */
-.contador{
-   
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.596);
-    padding: 20px;
-}
+
 
 .contador > button{
     border-radius: 5px ;
+    margin: 40px 10px;
+}
+.contador>h1{
+    margin: 40px 10px;
 }
