@@ -9,7 +9,7 @@ const ItemList = ({pelicula}) => {
               <div className="row p-0 m-0">
                   
                    {pelicula.length > 0 ? pelicula.map((peli,index)=>(
-                    <Item nombre={peli.nombre} mensaje={peli.mensaje} imagen={peli.imagen}/>
+                    <Item nombre={peli.nombre} mensaje={peli.mensaje} imagen={peli.imagen} id={peli.id}/>
                     )):
                     <h1>cargando<i class="fa-solid fa-spinner"></i></h1>
                   }

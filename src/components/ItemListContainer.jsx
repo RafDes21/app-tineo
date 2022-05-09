@@ -2,19 +2,22 @@ import React from "react";
 import ItemCount from "./ItemCount";
 import ItemList from "./item/ItemList";
 import { useEffect, useState } from "react";
+import ItemDetailContainer from "./ItemDetailContainer";
+
+
 
 const ItemListContainer = () => {
   
   const [pelicula, setPeliculas] = useState([]);
 
   const listaPeliculas = [
-    { imagen:"https://es.web.img2.acsta.net/pictures/17/09/29/21/15/4233147.jpg", nombre: "FLASH",  mensaje:"Alquilar" },
+    { id:1, imagen:"https://es.web.img2.acsta.net/pictures/17/09/29/21/15/4233147.jpg", nombre: "FLASH",  mensaje:"Detalles" },
     
-    { imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMAU4slG-foNx4hgUnG_xyVPgKzoby3x2vUw&usqp=CAU", nombre: "ARROW",mensaje:"Alquilar" },
+    { id:2, imagen:"https://r3.abcimg.es/resizer/resizer.php?imagen=https%3A%2F%2Fstatic4.abc.es%2Fmedia%2Fcapitulos%2F000%2F150%2F257%2Fepisodio-11-1.jpg&nuevoancho=683&medio=abc", nombre: "ARROW",mensaje:"Detalles" },
     
-    { imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-kDxfnKBdTTkXNi1UWNTPoZCWFXHPPr3wJINUsq7zOEspga-k-Wj0Tr3pfxsJ6wnSb0U&usqp=CAU", nombre: "BATMAN",mensaje:"Alquilar" }
+    { id:3 ,imagen: "https://1.bp.blogspot.com/-toGSP3ivu3M/XOvuj1m-JYI/AAAAAAABUXQ/erR-cEjQ4uAFmYzU-rHQvek4CtUW1axogCLcBGAs/s1600/Supergirl%2Bseason%2B4%2B%25280%2529.jpg", nombre: "SUPERGIRL",mensaje:"Detalles" }
   ];
-
+ 
   useEffect(() => {
     const pedido = new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -29,11 +32,18 @@ const ItemListContainer = () => {
 
     
   }, []);
-
+     
   return (
     <div>
-      <h1>Lista De Productos</h1>
+      <h1 className="text-center">Lista De Productos</h1>
       <ItemCount cantidad={5} />
+      {listaPeliculas.map((peli)=>(
+
+        <ItemDetailContainer key={peli.id} id={peli.id} />
+        
+       
+      ))}
+      
       <ItemList pelicula={pelicula}/>
     </div>
   );

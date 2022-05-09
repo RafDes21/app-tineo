@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 const Item = (props) => {
   return (
@@ -26,7 +28,7 @@ const Item = (props) => {
       >
         {props.nombre}
       </h5>
-
+      <Link to={`/detalles/${props.id}`}>
       <a
         style={{ position: "absolute", bottom: "10px", left: "20PX" }}
         href="#"
@@ -34,6 +36,10 @@ const Item = (props) => {
       >
         {props.mensaje}
       </a>
+      </Link>
+     
+     
+     
     </div>
   );
 };
