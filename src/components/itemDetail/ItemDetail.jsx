@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { useLocation, useParams } from "react-router-dom";
+import "./itemDetail.css";
 
 const ItemDetail = () => {
   const Location = useLocation();
@@ -10,7 +11,7 @@ const ItemDetail = () => {
       id: 1,
       nombre: "The Flash",
       imagen:
-        "https://es.web.img2.acsta.net/pictures/17/09/29/21/15/4233147.jpg",
+        "https://blogdesuperheroes.es/wp-content/plugins/BdSGallery/BdSGaleria/47915.jpg",
       descripcion:
         "Nueve meses después de que el laboratorio S.T.A.R. explotara, Barry despierta del coma y descubre que tiene el poder de la súper velocidad. Con la ayuda de su nuevo equipo, Barry, denominado ahora `Flash', luchará contra el crimen en Ciudad Central.",
       temporadas: 8,

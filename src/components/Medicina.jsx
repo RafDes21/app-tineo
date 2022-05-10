@@ -1,6 +1,7 @@
 import React from 'react'
 import Item from "./item/Item"
 
+
 const Medicina = () => {
 
     const medicina = [
@@ -13,7 +14,7 @@ const Medicina = () => {
       ];
 
   return (
-    <div className="container">
+    <div className="container main">
         <div className="row p-0 m-0">
 
         {medicina.map((peli,index)=>(

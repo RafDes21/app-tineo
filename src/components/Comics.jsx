@@ -34,7 +34,7 @@ const Comics = () => {
 
   
   return (
-    
+    <div>
         <div className="container">
             <div className="row p-0 m-0">
            
@@ -45,8 +45,8 @@ const Comics = () => {
             }
             </div>
             
-        
-        </div>
+          </div>
+    </div>
      
    
   )
