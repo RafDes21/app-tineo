@@ -3,6 +3,7 @@ import Item from "./Item";
 
 
 const ItemList = ({pelicula}) => {
+  
   return (
     <div className="container" >
               
