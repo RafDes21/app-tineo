@@ -1,8 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
+import { Link} from "react-router-dom";
 
 const Item = (props) => {
+
   return (
     <div
       className="card col-md-4 p-0"
@@ -28,19 +28,17 @@ const Item = (props) => {
       >
         {props.nombre}
       </h5>
-      <Link to={`/detalles/${props.id}`}>
+      <Link to={`/detalles/${props.id}`} >
       <a
         style={{ position: "absolute", bottom: "10px", left: "20PX" }}
-        href="#"
+        
         className="btn btn-primary"
       >
-        {props.mensaje}
+        detalles
       </a>
       </Link>
      
-     
-     
-    </div>
+     </div>
   );
 };
 

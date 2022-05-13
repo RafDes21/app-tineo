@@ -4,10 +4,9 @@ import "./navBar.css";
 import CardWidget from "../components/CartWidget";
 import {Link} from "react-router-dom";
 
-
-
 export default function NavBar() {
-  return (
+
+ return (
     <nav className="navbar navbar-expand-lg navbar-light bg-dark  ">
       <div className="container">
         <a className="navbar-brand">
@@ -27,10 +26,9 @@ export default function NavBar() {
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav ">
            
-            {/* <Link className="navbar-nav link" to={"/"}>Inicio</Link> */}
             <Link className="navbar-nav link nav-link" style={{color:"rgb(0, 255, 255,1)"}} to={"/"}>Productos</Link>
-            <Link className="navbar-nav link nav-link" style={{color:"rgb(0, 255, 255,1)"}} to={"/comics"}>Series-Comimcs</Link>
-            <Link className="navbar-nav link nav-link" style={{color:"rgb(0, 255, 255,1)"}} to={"/medicina"}>Series-Medicina</Link>
+            <Link className="navbar-nav link nav-link" style={{color:"rgb(0, 255, 255,1)"}} to={"/categorias/comics"}>Series-Comimcs</Link>
+            <Link className="navbar-nav link nav-link" style={{color:"rgb(0, 255, 255,1)"}} to={"/categorias/medicina"}>Series-Medicina</Link>
             
             <div className="CartWidget">
                 <CardWidget/>
