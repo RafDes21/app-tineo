@@ -61,13 +61,3 @@
     background-color: aqua;
 }
 
-/* //itemCount */
-
-
-.contador > button{
-    border-radius: 5px ;
-    margin: 40px 10px;
-}
-.contador>h1{
-    margin: 40px 10px;
-}

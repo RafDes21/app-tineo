@@ -39,7 +39,7 @@ const ItemListContainer = () => {
   return (
     <div>
       <h1 className="text-center">Lista De Productos</h1>
-      <ItemCount cantidad={5} />
+     
       <ItemList pelicula={pelicula}/>
     </div>
   );

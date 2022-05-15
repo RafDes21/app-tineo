@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import ItemCount from "../ItemCount";
 import "./itemDetail.css";
 
 const ItemDetail = (props) => {
   
+   const [add, setAdd] = useState(false)
+
+   const onAdd=()=>(
+      setAdd(!add)
+   )
   return (
     <div>
       <div className="container">
@@ -25,6 +31,17 @@ const ItemDetail = (props) => {
                 <li>N° de Episodios: {props.episodios}</li>
                 <li>Calidad de Vídeo: {props.calidad}</li>
               </ul>
+              {
+                add ? 
+                       <h2>Añadido!</h2>
+                       :
+                       <div >
+
+                         <ItemCount cantidad={5} />
+                         
+                          <button onClick={onAdd}  style={{padding:"10px 10px", margin:"10px auto", display:"flex"}}>Agregar al carrito</button>
+                       </div>
+                      }
               <a href="#" className="btn btn-primary">
                 Comprar
               </a>
