@@ -27,7 +27,7 @@ const ItemDetailContainer = () => {
       {
          detalles.map((dato)=> (
            <ItemDetail imagen={dato.imagen} nombre={dato.nombre} descripcion={dato.descripcion}
-           temporadas={dato.temporadas} episodios={dato.episodios} calidad={dato.calidad}/>
+           temporadas={dato.temporadas} episodios={dato.episodios} calidad={dato.calidad} stock={dato.stock} id={dato.id}/>
           ))
         }
       </div>

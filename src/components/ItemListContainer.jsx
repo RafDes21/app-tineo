@@ -1,6 +1,5 @@
 import React from "react";
 import { useParams } from 'react-router-dom'
-import ItemCount from "./ItemCount";
 import ItemList from "./item/ItemList";
 import { useEffect, useState } from "react";
 import {Series} from "../data/Series"

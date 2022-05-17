@@ -3,11 +3,18 @@ import { GlobalContex } from '../context/Globalprovider'
 
 const Cart = () => {
 
-    const {carrito}=useContext(GlobalContex)
+    const {carrito,removeItem}=useContext(GlobalContex)
+   
+    
+    console.log(carrito);
   return (
-    <div>
+   
+   <div>
         { carrito.length > 0 ? carrito.map((item, index)=>(
-            <li key={index}> {item.nombre}</li>
+          <>
+            <li key={index}> {item.nombre} {item.episodios} {item.cantidad} </li>
+           <button onClick={()=>removeItem(item.id)}>quitar</button>
+           </>
         )): <h1>carrito vacio</h1>
 
         }
