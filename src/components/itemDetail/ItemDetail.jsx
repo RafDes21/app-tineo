@@ -5,8 +5,6 @@ import ItemCount from "../ItemCount";
 import "./itemDetail.css";
 
 
-
-
 const ItemDetail = (serie) => {
  
   const {AddToCard} = useContext(GlobalContex)
@@ -58,9 +56,11 @@ const ItemDetail = (serie) => {
                          </>
                  
                       }
-              <a href="#" className="btn btn-primary">
-                Comprar
+                      <Link to={"/"}>
+              <a  className="btn btn-primary">
+                continuar Comprando
               </a>
+                      </Link>
             </div>
           </div>
         </div>

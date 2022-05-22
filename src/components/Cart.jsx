@@ -3,10 +3,9 @@ import { GlobalContex } from '../context/Globalprovider'
 
 const Cart = () => {
 
-    const {carrito,removeItem}=useContext(GlobalContex)
+    const {carrito,removeItem, clearItems}=useContext(GlobalContex)
    
-    
-    console.log(carrito);
+ 
   return (
    
    <div>
@@ -18,6 +17,10 @@ const Cart = () => {
         )): <h1>carrito vacio</h1>
 
         }
+       
+
+        <p onClick={()=>clearItems(carrito)} style={{cursor:"pointer", color:"red"}} >Vaciar Carrito</p>
+       
     </div>
   )
 }
