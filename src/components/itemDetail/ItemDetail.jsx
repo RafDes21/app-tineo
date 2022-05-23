@@ -6,14 +6,14 @@ import "./itemDetail.css";
 
 
 const ItemDetail = (serie) => {
- 
+ console.log("ste",serie);
   const {AddToCard} = useContext(GlobalContex)
   
   
    const [add, setAdd] = useState(false)
 
    const onAdd=(numero)=>{
-     console.log('compre',numero)
+     
       setAdd(!add)
       AddToCard({...serie,cantidad:numero})
     }

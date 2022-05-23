@@ -4,7 +4,7 @@ export const GlobalContex = createContext("");
 
 const Globalprovider = ({ children }) => {
   const [carrito, setCarrito] = useState([]);
-
+console.log(carrito);
   const AddToCard = (producto) => {
     const newCarrito = [...carrito];
     const index = carrito.findIndex((prod) => prod.id == producto.id);
