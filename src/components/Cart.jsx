@@ -1,20 +1,40 @@
-import React, { useContext } from 'react'
-import { GlobalContex } from '../context/Globalprovider'
+import React, { useContext } from "react";
+import { GlobalContex } from "../context/Globalprovider";
+import Formulario from "./Formulario";
+
+
 
 const Cart = () => {
   const { carrito, removeItem, clearItems } = useContext(GlobalContex);
 
+ 
+  const precioTotal=()=> {
+    let suma = 0;
+    for (let i = 0; i < carrito.length; i++) {
+      suma = suma + carrito[i].cantidad * carrito[i].precio;
+    }
+    return suma;
+  };
+  console.log(precioTotal());
+
+
   return (
     <div className="container">
-      {carrito.length > 0 ? (
-        carrito.map((item, index) => (
-          
-          <div className="row">
-            <div className="col-md-6">
+      <div className="row">
+        <div className="col-md-6">
+          {carrito.length > 0 ? (
+            carrito.map((item, index) => (
               <div className="row">
-                <div className="col-md-4" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+                <div
+                  className="col-md-4"
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
                   <img
-                    style={{ width: "80px"}}
+                    style={{ width: "80px" }}
                     src={item.imagen}
                     className="card-img-top"
                     alt="..."
@@ -29,14 +49,27 @@ const Cart = () => {
                   </div>
                 </div>
               </div>
-            </div>
-           
-          </div>
-        ))
-      ) : (
-        <h1>carrito vacio</h1>
-      )}
-
+            ))
+          ) : (
+            <h1>carrito vacio</h1>
+          )}
+        </div>
+        <div className="col-md-6">
+         <Formulario total={precioTotal()} compra={carrito}/>
+          {/* <form action="">
+                  <label htmlFor="">Nombre</label>
+                  <input type="text" required />
+                  <label htmlFor="">Apellido</label>
+                  <input type="text" required/>
+                  <label htmlFor="">Telefono</label>
+                  <input type="text" required/>
+                  <label htmlFor="">Mail</label>
+                  <input type="email" required />
+                  <button>total</button>
+                  <button>comprar</button>
+              </form> */}
+        </div>
+      </div>
       <p
         onClick={() => clearItems(carrito)}
         style={{ cursor: "pointer", color: "red" }}

@@ -6,7 +6,7 @@ import "./itemDetail.css";
 
 
 const ItemDetail = (serie) => {
- console.log("ste",serie);
+ 
   const {AddToCard} = useContext(GlobalContex)
   
   
