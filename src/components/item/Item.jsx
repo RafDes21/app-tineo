@@ -9,14 +9,16 @@ const Item = (props) => {
   return (
     <div
       className="card col-md-4 p-0"
-      style={{ width: "18rem", margin: "10px auto" }}
+      style={{ width: "18rem", margin: "20px auto",marginBottom:"60px" }}
     >
+      <Link to={`/detalles/${props.id}`}>
       <img
         style={{ height: "25rem", width: "100%" }}
         src={props.imagen}
         className="card-img-top"
         alt="..."
       />
+      </Link>
 
       <h5
         style={{

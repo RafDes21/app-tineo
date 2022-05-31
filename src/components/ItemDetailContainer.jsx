@@ -39,6 +39,7 @@ const ItemDetailContainer = () => {
           stock={dato.stock}
           id={dato.id}
           precio={dato.precio}
+          fondo={dato.fondo}
         />
       ))}
     </div>

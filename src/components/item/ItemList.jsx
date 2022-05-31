@@ -12,7 +12,7 @@ const ItemList = ({pelicula}) => {
                    {pelicula.length > 0 ? pelicula.map((peli,index)=>(
                     <Item nombre={peli.nombre} mensaje={peli.mensaje} imagen={peli.imagen} id={peli.id} categoria={peli.categoria}/>
                     )):
-                    <h1 className="text-center">cargando...<i class="fa-solid fa-spinner"></i></h1>
+                    <h1 className="text-center" style={{margin:"200px auto",color:"white"}}>cargando...<i class="fa-solid fa-spinner"></i></h1>
 
                   }
               </div>

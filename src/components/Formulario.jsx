@@ -75,7 +75,7 @@ const Input = ({
         
       e.preventDefault();
       if (validarTodoLLeno([email, nombre, apellido, telefono])) {
-        alert("faltan campos los llenar");
+        alert("Debe llenar todos los campos");
         return
       }
       {
@@ -107,9 +107,9 @@ const Input = ({
       };
   
     return (
-      <div>
+      <div style={{marginBottom:"40px"}}>
         <form onSubmit={onSubmit} className="container border">
-          <h3 className="text-uppercase text-center my-4">datos recipiente</h3>
+          <h3 className="text-uppercase text-center my-4">datos para la compra</h3>
           {Object.keys(formulario.buyer).map((key, index) => (
             <Input
               key={index}
@@ -133,7 +133,7 @@ const Input = ({
             </div>
             <button
               type="submit"
-              className="btn btn-primary text-uppercase w-100 my-4"
+              className="btn btn-success text-uppercase w-100 my-4"
             >
               terminar la compra
             </button>

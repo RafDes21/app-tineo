@@ -6,3 +6,16 @@
 .card:hover{
     transform: scale(1.01);
 }
+.carrito{
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+    
+}
+.btn-comprar{
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+    margin: 40px auto;
+    
+}
