@@ -6,7 +6,6 @@ import cardFondo from "../img/cardFondo.jpg"
 
 const Cart = () => {
   const { carrito, removeItem, clearItems } = useContext(GlobalContex);
-
   const precioTotal = () => {
     let suma = 0;
     for (let i = 0; i < carrito.length; i++) {
@@ -14,17 +13,15 @@ const Cart = () => {
     }
     return suma;
   };
-  console.log(precioTotal());
-
   return (
-    <div className="container-fluid " style={{
+    <div className="container-fluid" style={{
       backgroundImage:`url(${cardFondo})`,
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
       backgroundPosition: "center",
       
     }}>
-      <div className="row">
+      <div className="row m-0">
         {carrito.length < 1 ? (
           <>
             <h1
@@ -51,21 +48,22 @@ const Cart = () => {
           <p
             onClick={() => clearItems(carrito)}
             style={{
+              display:"flex",
               cursor: "pointer",
               color: "red",
               fontSize: "25px",
               marginTop: "40px",
             }}
           >
-            <i class="fa-solid fa-trash-can" style={{paddingLeft:"50px"}}></i>
+            <i className="fa-solid fa-trash-can" style={{marginLeft:"auto",marginRight:"100px"}}></i>
           </p>
         )}
         <div className="col-md-6" style={{ height: "490px", overflow: "auto" }}>
           {carrito.length > 0 ? (
-            carrito.map((item, index) => (
-              <div className="row" style={{backgroundColor:"rgba(0, 0, 0, 0.7) "}}>
+            carrito.map((item,index) => ( 
+              <div key={index} className="row" style={{backgroundColor:"rgba(0, 0, 0, 0.7) "}}>
                 <div
-                  className="col-md-4"
+                  className="col-md-4 col-sm-4 col-4"
                   style={{
                     display: "flex",
                     justifyContent: "center",
@@ -73,20 +71,21 @@ const Cart = () => {
                   }}
                 >
                   <img
-                    style={{ width: "100px" }}
+                   
+                    style={{ width: "120px",padding:"4px 0",borderRadius:"7px" }}
                     src={item.imagen}
                     className="card-img-top"
                     alt="..."
                   />
                 </div>
-                <div className="col-md-8" style={{fontWeight:"500",color:"white"}}>
+                <div className="col-md-8 col-sm-8 col-8" style={{fontWeight:"500",color:"white"}}>
                   <div className="card-body">
                     <h5 className="card-title">{item.nombre}</h5>
                     <p className="card-text">Cantidad: {item.cantidad} </p>
                     <p className="card-text">Precio x uni.: ${item.precio} </p>
                     <button
                       onClick={() => removeItem(item.id)}
-                      class="btn btn-outline-danger"
+                      className="btn btn-outline-danger"
                     >
                       Eliminar
                     </button>
@@ -110,3 +109,5 @@ const Cart = () => {
   );
 };
 export default Cart;
+
+ 

@@ -1,11 +1,7 @@
 import React from "react";
 import { Link} from "react-router-dom";
 
-
 const Item = (props) => {
-
- 
-
   return (
     <div
       className="card col-md-4 p-0"
@@ -34,13 +30,13 @@ const Item = (props) => {
         {props.nombre}
       </h5>
       <Link to={`/detalles/${props.id}`} >
-      <a
+      <button
         style={{ position: "absolute", bottom: "10px", left: "20PX" }}
         
         className="btn btn-primary"
       >
         detalles
-      </a>
+      </button>
       </Link>
      
      </div>
@@ -48,3 +44,7 @@ const Item = (props) => {
 };
 
 export default Item;
+
+
+ 
+

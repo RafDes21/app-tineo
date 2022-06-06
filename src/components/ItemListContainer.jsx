@@ -3,12 +3,11 @@ import { useParams } from "react-router-dom";
 import ItemList from "./item/ItemList";
 import { useEffect, useState } from "react";
 import db from "../service/fiberbase";
-import {getDocs, collection } from "firebase/firestore";
+import { getDocs, collection } from "firebase/firestore";
 
 const ItemListContainer = () => {
   const params = useParams();
   const [pelicula, setPeliculas] = useState([]);
-
   const getData = async () => {
     try {
       const col = collection(db, "Series");
@@ -39,11 +38,12 @@ const ItemListContainer = () => {
       console.log(error);
     }
   };
-
   useEffect(() => {
-    getData();
+    setTimeout(() => {
+      getData();
+      
+    }, 3000);
   }, [params.categoria]);
-
   return (
     <div
       style={{
@@ -52,11 +52,15 @@ const ItemListContainer = () => {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundAttachment: "fixed",
+       objectFit:"contain"
       }}
     >
-      <h1 className="text-center fs-1 fw-bolder" style={{textShadow:"4px 4px 10px white"}}>SERIES-FOX ONLINE</h1>
-
+      <h1
+        className="text-center fs-1 fw-bolder"
+        style={{ textShadow: "4px 4px 10px white" }}
+      >
+        SERIES-FOX ONLINE
+      </h1>
       <ItemList pelicula={pelicula} />
     </div>
   );
