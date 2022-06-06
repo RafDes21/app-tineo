@@ -39,11 +39,8 @@ const ItemListContainer = () => {
     }
   };
   useEffect(() => {
-    setTimeout(() => {
-      getData();
-      
-    }, 3000);
-  }, [params.categoria]);
+    getData();
+  }, [pelicula]);
   return (
     <div
       style={{
@@ -67,3 +64,6 @@ const ItemListContainer = () => {
 };
 
 export default ItemListContainer;
+    
+      
+    
