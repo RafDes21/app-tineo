@@ -8,37 +8,38 @@ import { getDocs, collection } from "firebase/firestore";
 const ItemListContainer = () => {
   const params = useParams();
   const [pelicula, setPeliculas] = useState([]);
-  const getData = async () => {
-    try {
-      const col = collection(db, "Series");
-      const data = await getDocs(col);
-      const result = data.docs.map(
-        (doc) => (doc = { id: doc.id, ...doc.data() })
-      );
-
-      if (params.categoria === "comics") {
-        setPeliculas(
-          result.filter((serie) => serie.categoria === params.categoria)
-        );
-      }
-      if (params.categoria === "medicina") {
-        setPeliculas(
-          result.filter((serie) => serie.categoria === params.categoria)
-        );
-      }
-      if (params.categoria === "drama") {
-        setPeliculas(
-          result.filter((serie) => serie.categoria === params.categoria)
-        );
-      }
-      if (params.categoria === undefined) {
-        setPeliculas(result);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+ 
   useEffect(() => {
+    const getData = async () => {
+      try {
+        const col = collection(db, "Series");
+        const data = await getDocs(col);
+        const result = data.docs.map(
+          (doc) => (doc = { id: doc.id, ...doc.data() })
+        );
+  
+        if (params.categoria === "comics") {
+          setPeliculas(
+            result.filter((serie) => serie.categoria === params.categoria)
+          );
+        }
+        if (params.categoria === "medicina") {
+          setPeliculas(
+            result.filter((serie) => serie.categoria === params.categoria)
+          );
+        }
+        if (params.categoria === "drama") {
+          setPeliculas(
+            result.filter((serie) => serie.categoria === params.categoria)
+          );
+        }
+        if (params.categoria === undefined) {
+          setPeliculas(result);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
     getData();
   }, [params.categoria]);
   return (

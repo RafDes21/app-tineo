@@ -9,23 +9,22 @@ import detail from "../img/detail.jpg"
 const ItemDetailContainer = () => {
   const params = useParams();
   const [detalles, setDetalles] = useState([]);
-  const getDataDetail = async () => {
-    const col = collection(db, "Series");
-    try {
-      const data = await getDocs(col);
-      const result = data.docs.map(
-        (doc) => (doc = { id: doc.id, ...doc.data() })
-      );
-      setDetalles(result.filter((dato) => dato.id === params.id));
-    } catch (error) {
-      console.log(error);
-    }
-  };
+ 
 
   useEffect(() => {
-    setTimeout(() => {
-      getDataDetail();
-    }, 3000);
+    const getDataDetail = async () => {
+      const col = collection(db, "Series");
+      try {
+        const data = await getDocs(col);
+        const result = data.docs.map(
+          (doc) => (doc = { id: doc.id, ...doc.data() })
+        );
+        setDetalles(result.filter((dato) => dato.id === params.id));
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getDataDetail();
   }, [params.id]);
   return (
     <div >
@@ -67,3 +66,5 @@ const ItemDetailContainer = () => {
   );
 };
 export default ItemDetailContainer;
+ 
+    
