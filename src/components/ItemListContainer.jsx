@@ -40,7 +40,7 @@ const ItemListContainer = () => {
   };
   useEffect(() => {
     getData();
-  }, [pelicula]);
+  }, [params.categoria]);
   return (
     <div
       style={{
